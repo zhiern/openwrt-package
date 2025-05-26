@@ -1,0 +1,23 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006 OpenWrt.org
+
+STOP=00
+
+shutdown() {
+	local message="System Shutting Down"
+	logger -s -t "DEBUG" "$message"
+	logger -t "DEBUG" "$message"
+
+	local consoles="$(cat /sys/class/tty/console/active)"
+	[ -n "$consoles" ] || consoles=console
+	for console in $consoles; do
+		[ -c "/dev/$console" ] && echo "$message" >"/dev/$console"
+	done
+
+	# blink led
+	. /etc/diag.sh
+	[ -n "$running" ] && {
+		status_led="$running"
+		status_led_blink_preinit_regular
+	}
+}
