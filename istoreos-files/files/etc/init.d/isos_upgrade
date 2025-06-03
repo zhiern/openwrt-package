@@ -1,6 +1,6 @@
 #!/bin/sh /etc/rc.common
 # istoreos upgrade post process
-# Copyright (C) 2022 jjm2473
+# Copyright (C) 2022-2025 jjm2473
 
 START=14
 
@@ -84,7 +84,15 @@ upgrade_opkg_distfeeds() {
 	local oldrelease=$(grep -m1 '/base$' /etc/opkg/distfeeds.conf | grep -Eo '/releases/[^/]+/')
 	[ -z "$newrelease" -o -z "$oldrelease" ] && return 0
 	[ "$newrelease" = "$oldrelease" ] && return 0
-	sed -i -e 's#'"$oldrelease"'#'"$newrelease"'#g' /etc/opkg/distfeeds.conf
+
+	local romrepo="$(grep -m1 '/base$' /rom/etc/opkg/distfeeds.conf | grep -Eo ' https?://.*/releases/')"
+	local userrepo="$(grep -m1 '/base$' /etc/opkg/distfeeds.conf | grep -Eo ' https?://.*/releases/')"
+	echo "# Generated file, do not edit" > /etc/opkg/distfeeds.conf
+	if [ -z "$romrepo" -o -z "$userrepo" ]; then
+		cat /rom/etc/opkg/distfeeds.conf >> /etc/opkg/distfeeds.conf
+		return 0
+	fi
+	sed -E 's# https?://.*/releases/#'"$userrepo"'#g' /rom/etc/opkg/distfeeds.conf >> /etc/opkg/distfeeds.conf
 }
 
 boot() {
