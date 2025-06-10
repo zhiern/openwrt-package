@@ -1,8 +1,8 @@
 @font-face {
   font-family: "easeicon"; /* Project id 3156136 */
-  src: url('iconfont.woff2?t=1642756089463') format('woff2'),
-       url('iconfont.woff?t=1642756089463') format('woff'),
-       url('iconfont.ttf?t=1642756089463') format('truetype');
+  src: url('iconfont.woff2?t=1749538073338') format('woff2'),
+       url('iconfont.woff?t=1749538073338') format('woff'),
+       url('iconfont.ttf?t=1749538073338') format('truetype');
 }
 
 .easeicon {
@@ -11,6 +11,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.eicon-wifi:before {
+  content: "\e627";
 }
 
 .eicon-store:before {
@@ -29,7 +33,8 @@
   content: "\e664";
 }
 
-.main>.main-left>.nav>li.slide>.menu[data-title=Docker]:before {
+.main>.main-left>.nav>li.slide>.menu[data-title=Docker]:before,
+.main>.main-left>.nav>li>a[data-title=Docker]:before {
     font-family: 'easeicon' !important;
     content: "\e659" !important;
     color: #0c93f3;
@@ -54,4 +59,11 @@
     font-family: 'easeicon' !important;
     content: "\ecc7" !important;
     color: #fb6340;
+}
+
+.main>.main-left>.nav>li.slide>.menu[data-title=Wireless]:before,
+.main>.main-left>.nav>li>a[data-title=Wireless]:before {
+    font-family: 'easeicon' !important;
+    content: "\e627" !important;
+    color: #03cdf0;
 }

@@ -72,7 +72,7 @@ HOST_LN="$(subst ${STAGING_DIR_HOST},$${STAGING_DIR_HOST},$(LN))"
 	rm -f "$${IPKG_INSTROOT}/sbin/jffs2reset"
 	$${HOST_LN} /sbin/firstboot "$${IPKG_INSTROOT}/sbin/jffs2reset"
 
-	$${HOST_SED} '/<link rel="shortcut icon" href="<%=media%>\/favicon.ico">/a         <link rel="stylesheet" href="<%=resource%>/easepi/easeicon.css?t=1649313193968">' \
+	$${HOST_SED} '/<link rel="shortcut icon" href="<%=media%>\/favicon.ico">/a         <link rel="stylesheet" href="<%=resource%>/easepi/easeicon.css?t=1749538073338">' \
 		"$${IPKG_INSTROOT}/usr/lib/lua/luci/view/themes/argon/header.htm" \
 		"$${IPKG_INSTROOT}/usr/lib/lua/luci/view/themes/argon_dark/header.htm" \
 		"$${IPKG_INSTROOT}/usr/lib/lua/luci/view/themes/argon_light/header.htm" \
