@@ -41,8 +41,7 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-watchdog watchdog-openw
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go ddns-go-openwrt && mv -n ddns-go-openwrt/{luci-app-ddns-go,ddns-go} ./ && rm -rf ddns-go-openwrt
 git clone --depth 1 https://github.com/sirpdboy/luci-app-partexp partexp && mv -n partexp/luci-app-partexp ./ && rm -rf partexp
 git clone --depth 1 https://github.com/sirpdboy/luci-app-chatgpt-web
-git clone --depth 1 -b lua https://github.com/sirpdboy/luci-app-adguardhome adguardhome adguardhome/luci-app-adguardhome ./ && rm -rf adguardhome
-git clone --depth 1 https://github.com/sirpdboy/luci-app-taskplan taskplan taskplan/luci-app-taskplan ./ && rm -rf taskplan
+git clone --depth 1 https://git.kejizero.online/zhao/luci-app-adguardhome
 
 sed -i \
 -e 's?include \.\./\.\./\(lang\|devel\)?include $(TOPDIR)/feeds/packages/\1?' \
