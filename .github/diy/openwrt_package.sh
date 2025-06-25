@@ -42,11 +42,4 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-chatgpt-web
 git clone --depth 1 -b lua https://github.com/sirpdboy/luci-app-adguardhome adguardhome adguardhome/luci-app-adguardhome ./ && rm -rf adguardhome
 git clone --depth 1 https://github.com/sirpdboy/luci-app-taskplan taskplan taskplan/luci-app-taskplan ./ && rm -rf taskplan
 
-sed -i \
--e 's?include \.\./\.\./\(lang\|devel\)?include $(TOPDIR)/feeds/packages/\1?' \
--e 's?\.\./\.\./luci.mk?$(TOPDIR)/feeds/luci/luci.mk?' \
-*/Makefile
-
-rm -rf ./*/.git ./*/.gitattributes ./*/.svn ./*/.github ./*/.gitignore
-#find . -type f -name Makefile -exec sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' {} +
 exit 0
