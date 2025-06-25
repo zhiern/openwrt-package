@@ -20,6 +20,8 @@ rm -rf $1
 # 主题
 git clone --depth 1 -b js https://github.com/sirpdboy/luci-theme-kucat kucat && mv -n kucat/luci-theme-kucat ./ && rm -rf kucat
 git clone --depth 1 https://github.com/sirpdboy/luci-app-kucat-config
+git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha
+git clone --depth 1 https://github.com/coolsnowwolf/luci && mv -n luci/themes/luci-theme-design ./ ; rm -rf luci
 git clone --depth 1 -b openwrt-24.10 https://github.com/sbwml/luci-theme-argon argon && mv -n argon/{luci-theme-argon,luci-app-argon-config} ./ && rm -rf argon
 
 # gdy666
