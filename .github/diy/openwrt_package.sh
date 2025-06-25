@@ -41,6 +41,11 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-watchdog watchdog-openw
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go ddns-go-openwrt && mv -n ddns-go-openwrt/{luci-app-ddns-go,ddns-go} ./ && rm -rf ddns-go-openwrt
 git clone --depth 1 https://github.com/sirpdboy/luci-app-partexp partexp && mv -n partexp/luci-app-partexp ./ && rm -rf partexp
 git clone --depth 1 https://github.com/sirpdboy/luci-app-chatgpt-web
+
+# Lienol
+git clone --depth 1 -b main https://github.com/Lienol/openwrt-package && mv -n openwrt-package/{luci-app-ramfree,luci-app-socat} ./ && rm -rf openwrt-package
+
+# kejizero
 git clone --depth 1 https://git.kejizero.online/zhao/luci-app-adguardhome
 
 sed -i \
