@@ -45,9 +45,10 @@ git clone --depth 1 https://git.kejizero.online/zhao/luci-app-adguardhome
 
 sed -i \
 -e 's?include \.\./\.\./\(lang\|devel\)?include $(TOPDIR)/feeds/packages/\1?' \
--e 's?2. Clash For OpenWRT?3. Applications?' \
 -e 's?\.\./\.\./luci.mk?$(TOPDIR)/feeds/luci/luci.mk?' \
--e 's/ca-certificates/ca-bundle/' \
 */Makefile
+
+rm -rf ./*/.git ./*/.gitattributes ./*/.svn ./*/.github ./*/.gitignore
+#find . -type f -name Makefile -exec sed -i 's/PKG_BUILD_FLAGS:=no-mips16/PKG_USE_MIPS16:=0/g' {} +
 
 exit 0
