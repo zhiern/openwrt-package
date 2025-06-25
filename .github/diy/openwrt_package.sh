@@ -27,7 +27,7 @@ git clone --depth 1 https://github.com/gdy666/luci-app-lucky lucky-openwrt && mv
 git clone --depth 1 -b master https://github.com/destan19/OpenAppFilter && mv -n OpenAppFilter/{luci-app-oaf,oaf,open-app-filter} ./ && rm -rf OpenAppFilter
 
 # sbwml
-git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns mosdns && mv -n mosdns/{luci-app-mosdns,mosdns,v2dat} ./ && rm -rf mosdns
+git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns mosdns-openwrt && mv -n mosdns-openwrt/{luci-app-mosdns,mosdns,v2dat} ./ && rm -rf mosdns-openwrt
 git clone --depth 1 -b main https://github.com/sbwml/luci-app-openlist openlist-openwrt && mv -n openlist-openwrt/{luci-app-openlist,openlist} ./ && rm -rf openlist-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-airplay2 airplay2-openwrt && mv -n airplay2-openwrt/{luci-app-airplay2,airplay2} ./ && rm -rf airplay2-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-mentohust mentohust-openwrt && mv -n mentohust-openwrt/{luci-app-mentohust,mentohust} ./ && rm -rf mentohust-openwrt
