@@ -36,11 +36,15 @@ jobs:
           NO_REFRESH_CHECK: true
           IGNORE_ERRORS: true
 
+      - name: Organize Files
+        run: |
+          tar -czf ${{ matrix.arch }}.tar.gz -C bin/packages/${{ matrix.arch }}/packages_ci .
+
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.tag }}-${{ matrix.arch }}
-          path: bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
+          path: ${{ matrix.arch }}.tar.gz
 
       - name: Upload Firmware To Release
         uses: ncipollo/release-action@v1
@@ -49,4 +53,6 @@ jobs:
           allowUpdates: true
           tag: ${{ matrix.tag }}-${{ matrix.arch }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
+          artifacts: |
+            bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
+            ${{ matrix.arch }}.tar.gz
