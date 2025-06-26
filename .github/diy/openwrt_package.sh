@@ -24,12 +24,6 @@ git clone --depth 1 https://github.com/derisamedia/luci-theme-alpha
 git clone --depth 1 https://github.com/coolsnowwolf/luci && mv -n luci/themes/luci-theme-design ./ ; rm -rf luci
 git clone --depth 1 -b openwrt-24.10 https://github.com/sbwml/luci-theme-argon argon && mv -n argon/{luci-theme-argon,luci-app-argon-config} ./ && rm -rf argon
 
-# gdy666
-git clone --depth 1 https://github.com/gdy666/luci-app-lucky lucky-openwrt && mv -n lucky-openwrt/{luci-app-lucky,lucky} ./ && rm -rf lucky-openwrt
-
-# destan19
-git clone --depth 1 -b master https://github.com/destan19/OpenAppFilter && mv -n OpenAppFilter/{luci-app-oaf,oaf,open-app-filter} ./ && rm -rf OpenAppFilter
-
 # sbwml
 git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns mosdns-openwrt && mv -n mosdns-openwrt/{luci-app-mosdns,mosdns,v2dat} ./ && rm -rf mosdns-openwrt
 git clone --depth 1 -b main https://github.com/sbwml/luci-app-openlist openlist-openwrt && mv -n openlist-openwrt/{luci-app-openlist,openlist} ./ && rm -rf openlist-openwrt
@@ -43,6 +37,15 @@ git clone --depth 1 https://github.com/sirpdboy/luci-app-watchdog watchdog-openw
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go ddns-go-openwrt && mv -n ddns-go-openwrt/{luci-app-ddns-go,ddns-go} ./ && rm -rf ddns-go-openwrt
 git clone --depth 1 https://github.com/sirpdboy/luci-app-partexp partexp && mv -n partexp/luci-app-partexp ./ && rm -rf partexp
 git clone --depth 1 https://github.com/sirpdboy/luci-app-chatgpt-web
+
+# 易有云团队
+git clone --depth 1 -b main https://github.com/linkease/istore && mv -n istore/luci/{luci-app-store,luci-lib-taskd,luci-lib-xterm,taskd} ./ ; rm -rf istore
+
+# gdy666
+git clone --depth 1 https://github.com/gdy666/luci-app-lucky lucky-openwrt && mv -n lucky-openwrt/{luci-app-lucky,lucky} ./ && rm -rf lucky-openwrt
+
+# destan19
+git clone --depth 1 -b master https://github.com/destan19/OpenAppFilter && mv -n OpenAppFilter/{luci-app-oaf,oaf,open-app-filter} ./ && rm -rf OpenAppFilter
 
 # Lienol
 git clone --depth 1 -b main https://github.com/Lienol/openwrt-package && mv -n openwrt-package/{luci-app-ramfree,luci-app-socat} ./ && rm -rf openwrt-package
