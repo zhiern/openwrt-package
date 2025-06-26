@@ -32,7 +32,6 @@ git clone --depth 1 https://github.com/sbwml/luci-app-webdav
 
 # sirpdboy
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netwizard netwizard && mv -n netwizard/luci-app-netwizard ./ && rm -rf netwizard
-git clone --depth 1 https://github.com/sirpdboy/luci-app-watchdog watchdog-openwrt && mv -n watchdog-openwrt/{luci-app-watchdog,watchdog} ./ && rm -rf watchdog-openwrt
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go ddns-go-openwrt && mv -n ddns-go-openwrt/{luci-app-ddns-go,ddns-go} ./ && rm -rf ddns-go-openwrt
 git clone --depth 1 https://github.com/sirpdboy/luci-app-partexp partexp && mv -n partexp/luci-app-partexp ./ && rm -rf partexp
 git clone --depth 1 https://github.com/sirpdboy/luci-app-chatgpt-web
