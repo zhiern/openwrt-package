@@ -32,7 +32,7 @@ jobs:
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.tag }}
           FEEDNAME: packages_ci
-          PACKAGES: airplay2 ddns-go luci-app-adguardhome luci-app-airplay2 luci-app-argon-config luci-app-chatgpt-web luci-app-ddns-go luci-app-kucat-config luci-app-lucky luci-app-mentohust luci-app-mosdns luci-app-netwizard luci-app-oaf luci-app-openlist luci-app-partexp luci-app-ramfree luci-app-socat luci-app-watchdog luci-app-webdav luci-theme-argon luci-theme-kucat lucky mentohust mosdns oaf open-app-filter openlist v2dat watchdog luci-theme-alpha luci-theme-design
+          PACKAGES: airplay2 ddns-go luci-app-adguardhome luci-app-airplay2 luci-app-argon-config luci-app-chatgpt-web luci-app-ddns-go luci-app-kucat-config luci-app-lucky luci-app-mentohust luci-app-mosdns luci-app-netwizard luci-app-oaf luci-app-openlist luci-app-partexp luci-app-ramfree luci-app-socat luci-app-watchdog luci-app-webdav luci-theme-argon luci-theme-kucat lucky mentohust mosdns oaf open-app-filter openlist v2dat watchdog luci-theme-alpha luci-theme-design luci-app-store luci-lib-taskd luci-lib-xterm taskd
           NO_REFRESH_CHECK: true
           IGNORE_ERRORS: true
 
