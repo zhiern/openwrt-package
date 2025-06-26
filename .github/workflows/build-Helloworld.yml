@@ -40,6 +40,10 @@ jobs:
           NO_REFRESH_CHECK: true
           IGNORE_ERRORS: true
 
+      - name: Organize Files
+        run: |
+          tar -czf ${{ matrix.arch }}.tar.gz -C bin/packages/${{ matrix.arch }}/packages_ci .
+          
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -53,4 +57,6 @@ jobs:
           allowUpdates: true
           tag: Helloworld-${{ matrix.tag }}-${{ matrix.arch }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
+          artifacts: |
+            bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
+            ${{ matrix.arch }}.tar.gz
