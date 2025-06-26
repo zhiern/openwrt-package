@@ -17,6 +17,11 @@ mv -n `find $1/* -maxdepth 0 -type d` ./
 rm -rf $1
 }
 
+# 科学相关
+git clone --depth 1 -b v5 https://github.com/sbwml/openwrt_helloworld && mv -n openwrt_helloworld/{chinadns-ng,dns2socks-rust,dns2socks,dns2tcp,geoview,hysteria,ipt2socks,lua-neturl,luci-app-homeproxy,luci-app-nikki,luci-app-openclash,luci-app-passwall,luci-app-passwall2,luci-app-ssr-plus,microsocks,naiveproxy,nikki,pdnsd,redsocks2,shadow-tls,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,sing-box,tcping,trojan-plus,trojan,tuic-client,v2ray-core,v2ray-geodata,v2ray-plugin,xray-core,xray-plugin} ./ && rm -rf openwrt_helloworld
+git clone --depth 1 https://github.com/QiuSimons/luci-app-daed dae && mv -n dae/{luci-app-daed,daed} ./ && rm -rf dae
+git clone --depth 1 https://github.com/oppen321/libcron
+
 # 主题
 git clone --depth 1 -b js https://github.com/sirpdboy/luci-theme-kucat kucat && mv -n kucat/luci-theme-kucat ./ && rm -rf kucat
 git clone --depth 1 https://github.com/sirpdboy/luci-app-kucat-config
