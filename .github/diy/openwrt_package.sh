@@ -46,6 +46,7 @@ git clone --depth 1 -b main https://github.com/linkease/istore && mv -n istore/l
 git clone --depth 1 -b main https://github.com/linkease/nas-packages-luci && mv -n nas-packages-luci/luci/{luci-app-ddnsto,luci-app-floatip,luci-app-istoreenhance,luci-app-istorex,luci-app-linkease,luci-app-quickstart,luci-app-unishare,luci-lib-iform,luci-nginxer} ./ ; rm -rf nas-packages-luci
 git clone --depth 1 https://github.com/linkease/nas-packages && mv -n nas-packages/multimedia/ffmpeg-remux ./ ; rm -rf nas-packages
 git clone --depth 1 https://github.com/linkease/nas-packages && mv -n nas-packages/network/services/{ddnsto,floatip,istoreenhance,linkease,linkmount,quickstart,unishare,webdav2} ./ ; rm -rf nas-packages
+git clone --depth 1 -b main https://github.com/linkease/openwrt-app-actions && mv -n openwrt-app-actions/applications/luci-app-ap-modem ./ ; rm -rf openwrt-app-actions
 
 # gdy666
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky lucky-openwrt && mv -n lucky-openwrt/{luci-app-lucky,lucky} ./ && rm -rf lucky-openwrt
