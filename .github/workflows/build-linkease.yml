@@ -1,0 +1,58 @@
+name: Build linkease
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [build]
+
+jobs:
+  build:
+    name: Build ${{ matrix.arch }}-${{ matrix.tag }}
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+          - aarch64_generic
+          - x86_64
+        tag:
+          - openwrt-24.10
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/lib/{jvm,llvm} /usr/local /usr/src/* /var/lib/gems /var/lib/mysql /var/lib/snapd /etc/skel /opt/{microsoft,az,hostedtoolcache,cni,mssql-tools,pipx} /usr/share/{az*,dotnet,swift,miniconda,gradle*,java,kotlinc,ri,sbt} /root/{.sbt,.local,.npm} /usr/libexec/gcc/x86_64-linux-gnu/14 /usr/lib/x86_64-linux-gnu/{*clang*,*LLVM*} /home/linuxbrew
+
+      - name: Build Packages
+        uses: sbwml/openwrt-gh-action-sdk@helloworld
+        env:
+          ARCH: ${{ matrix.arch }}-${{ matrix.tag }}
+          FEEDNAME: packages_ci
+          PACKAGES: luci-app-ddnsto luci-app-floatip luci-app-istoreenhance luci-app-istorex luci-app-linkease luci-app-quickstart luci-app-unishare luci-lib-iform luci-nginxer 
+          NO_REFRESH_CHECK: true
+          IGNORE_ERRORS: true
+
+      - name: Organize Files
+        run: |
+          tar -czf ${{ matrix.arch }}.tar.gz -C bin/packages/${{ matrix.arch }}/packages_ci .
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.tag }}-${{ matrix.arch }}
+          path: ${{ matrix.arch }}.tar.gz
+
+      - name: Upload Firmware To Release
+        uses: ncipollo/release-action@v1
+        with:
+          name: ${{ matrix.tag }}-${{ matrix.arch }}
+          allowUpdates: true
+          tag: ${{ matrix.tag }}-${{ matrix.arch }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: |
+            bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
+            ${{ matrix.arch }}.tar.gz
