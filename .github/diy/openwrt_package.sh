@@ -65,7 +65,7 @@ git clone --depth 1 -b main https://github.com/Lienol/openwrt-package && mv -n o
 git clone --depth 1 https://git.kejizero.online/zhao/luci-app-adguardhome
 
 # smartdns
-git clone --depth 1 https://github.com/pymumu/openwrt-smartdns
+git clone --depth 1 https://github.com/pymumu/openwrt-smartdns smartdns
 git clone --depth 1 -b master https://github.com/pymumu/luci-app-smartdns
 
 # unblockneteasemusic
