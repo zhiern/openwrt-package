@@ -43,7 +43,8 @@ jobs:
         $GITHUB_WORKSPACE/.github/diy/openwrt_package.sh
         bash /$GITHUB_WORKSPACE/.github/diy/convert_translation.sh
         bash /$GITHUB_WORKSPACE/.github/diy/create_acl_for_luci.sh -a
-
+        bash /$GITHUB_WORKSPACE/.github/diy/Modify.sh
+        
     - name: Upload
       env: 
         ACCESS_TOKEN: ${{ secrets.TOKEN_zhiern }}
