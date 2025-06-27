@@ -43,15 +43,15 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.tag }}-${{ matrix.arch }}
+          name: linkease-${{ matrix.tag }}-${{ matrix.arch }}
           path: ${{ matrix.arch }}.tar.gz
 
       - name: Upload Firmware To Release
         uses: ncipollo/release-action@v1
         with:
-          name: ${{ matrix.tag }}-${{ matrix.arch }}
+          name: linkease-${{ matrix.tag }}-${{ matrix.arch }}
           allowUpdates: true
-          tag: ${{ matrix.tag }}-${{ matrix.arch }}
+          tag: linkease-${{ matrix.tag }}-${{ matrix.arch }}
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: |
             bin/packages/${{ matrix.arch }}/packages_ci/*.ipk
