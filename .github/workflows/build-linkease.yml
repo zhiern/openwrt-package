@@ -32,7 +32,7 @@ jobs:
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.tag }}
           FEEDNAME: packages_ci
-          PACKAGES: luci-app-ddnsto luci-app-floatip luci-app-istoreenhance luci-app-istorex luci-app-linkease luci-app-quickstart luci-app-unishare luci-lib-iform luci-nginxer 
+          PACKAGES: luci-app-ddnsto luci-app-floatip luci-app-istoreenhance luci-app-istorex luci-app-linkease luci-app-quickstart luci-app-unishare luci-lib-iform luci-nginxer ffmpeg-remux ddnsto floatip istoreenhance linkease linkmount quickstart unishare webdav2
           NO_REFRESH_CHECK: true
           IGNORE_ERRORS: true
 
