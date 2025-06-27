@@ -33,6 +33,7 @@ git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns mosdns-openwr
 git clone --depth 1 -b main https://github.com/sbwml/luci-app-openlist openlist-openwrt && mv -n openlist-openwrt/{luci-app-openlist,openlist} ./ && rm -rf openlist-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-airplay2 airplay2-openwrt && mv -n airplay2-openwrt/{luci-app-airplay2,airplay2} ./ && rm -rf airplay2-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-mentohust mentohust-openwrt && mv -n mentohust-openwrt/{luci-app-mentohust,mentohust} ./ && rm -rf mentohust-openwrt
+git clone --depth 1 -b master https://github.com/sbwml/luci-app-qbittorrent qbittorrent-openwrt qbittorrent-openwrt/{luci-app-qbittorrent,qbittorrent,qt6base,qt6tools,rblibtorrent} ./ && rm -rf qbittorrent-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-webdav
 
 # sirpdboy
@@ -48,20 +49,27 @@ git clone --depth 1 https://github.com/linkease/nas-packages && mv -n nas-packag
 git clone --depth 1 https://github.com/linkease/nas-packages && mv -n nas-packages/network/services/{ddnsto,floatip,istoreenhance,linkease,linkmount,quickstart,unishare,webdav2} ./ ; rm -rf nas-packages
 git clone --depth 1 -b main https://github.com/linkease/openwrt-app-actions && mv -n openwrt-app-actions/applications/luci-app-ap-modem ./ ; rm -rf openwrt-app-actions
 
-# gdy666
+# lucky
 git clone --depth 1 https://github.com/gdy666/luci-app-lucky lucky-openwrt && mv -n lucky-openwrt/{luci-app-lucky,lucky} ./ && rm -rf lucky-openwrt
 
-# destan19
+# oaf
 git clone --depth 1 -b master https://github.com/destan19/OpenAppFilter && mv -n OpenAppFilter/{luci-app-oaf,oaf,open-app-filter} ./ && rm -rf OpenAppFilter
 
-# lisaac
+# diskman
 git clone --depth 1 https://github.com/lisaac/luci-app-diskman diskman && mv -n diskman/applications/luci-app-diskman ./ ; rm -rf diskman
 
-# Lienol
+# socat
 git clone --depth 1 -b main https://github.com/Lienol/openwrt-package && mv -n openwrt-package/{luci-app-ramfree,luci-app-socat} ./ && rm -rf openwrt-package
 
-# kejizero
+# adguardhome
 git clone --depth 1 https://git.kejizero.online/zhao/luci-app-adguardhome
+
+# smartdns
+git clone --depth 1 https://github.com/pymumu/openwrt-smartdns
+git clone --depth 1 -b master https://github.com/pymumu/luci-app-smartdns
+
+# unblockneteasemusic
+git clone --depth 1 -b js https://github.com/UnblockNeteaseMusic/luci-app-unblockneteasemusic
 
 sed -i \
 -e 's?include \.\./\.\./\(lang\|devel\)?include $(TOPDIR)/feeds/packages/\1?' \
