@@ -33,6 +33,7 @@ git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns mosdns-openwr
 git clone --depth 1 -b main https://github.com/sbwml/luci-app-openlist openlist-openwrt && mv -n openlist-openwrt/{luci-app-openlist,openlist} ./ && rm -rf openlist-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-airplay2 airplay2-openwrt && mv -n airplay2-openwrt/{luci-app-airplay2,airplay2} ./ && rm -rf airplay2-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-mentohust mentohust-openwrt && mv -n mentohust-openwrt/{luci-app-mentohust,mentohust} ./ && rm -rf mentohust-openwrt
+git clone --depth 1 -b main https://github.com/sbwml/openwrt_pkgs  && mv -n openwrt_pkg/{luci-app-netspeedtest,speedtest-cli} ./ ; rm -rf openwrt_pkgs
 git clone --depth 1 https://github.com/sbwml/luci-app-webdav
 
 # sirpdboy
@@ -49,6 +50,9 @@ git clone --depth 1 https://github.com/gdy666/luci-app-lucky lucky-openwrt && mv
 
 # destan19
 git clone --depth 1 -b master https://github.com/destan19/OpenAppFilter && mv -n OpenAppFilter/{luci-app-oaf,oaf,open-app-filter} ./ && rm -rf OpenAppFilter
+
+# lisaac
+git clone --depth 1 https://github.com/lisaac/luci-app-diskman diskman diskman/applications/luci-app-diskman ./ ; rm -rf diskman
 
 # Lienol
 git clone --depth 1 -b main https://github.com/Lienol/openwrt-package && mv -n openwrt-package/{luci-app-ramfree,luci-app-socat} ./ && rm -rf openwrt-package
