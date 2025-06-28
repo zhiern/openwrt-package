@@ -33,13 +33,15 @@ git clone --depth 1 -b v5 https://github.com/sbwml/luci-app-mosdns mosdns-openwr
 git clone --depth 1 -b main https://github.com/sbwml/luci-app-openlist openlist-openwrt && mv -n openlist-openwrt/{luci-app-openlist,openlist} ./ && rm -rf openlist-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-airplay2 airplay2-openwrt && mv -n airplay2-openwrt/{luci-app-airplay2,airplay2} ./ && rm -rf airplay2-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-mentohust mentohust-openwrt && mv -n mentohust-openwrt/{luci-app-mentohust,mentohust} ./ && rm -rf mentohust-openwrt
-git clone --depth 1 -b master https://github.com/sbwml/luci-app-qbittorrent qbittorrent-openwrt qbittorrent-openwrt/{luci-app-qbittorrent,qbittorrent,qt6base,qt6tools,rblibtorrent} ./ && rm -rf qbittorrent-openwrt
+git clone --depth 1 -b master https://github.com/sbwml/luci-app-qbittorrent qbittorrent-openwrt && mv -n qbittorrent-openwrt/{luci-app-qbittorrent,qbittorrent,qt6base,qt6tools,rblibtorrent} ./ && rm -rf qbittorrent-openwrt
 git clone --depth 1 https://github.com/sbwml/luci-app-webdav
 
 # sirpdboy
 git clone --depth 1 https://github.com/sirpdboy/luci-app-netwizard netwizard && mv -n netwizard/luci-app-netwizard ./ && rm -rf netwizard
 git clone --depth 1 https://github.com/sirpdboy/luci-app-ddns-go ddns-go-openwrt && mv -n ddns-go-openwrt/{luci-app-ddns-go,ddns-go} ./ && rm -rf ddns-go-openwrt
 git clone --depth 1 https://github.com/sirpdboy/luci-app-partexp partexp && mv -n partexp/luci-app-partexp ./ && rm -rf partexp
+git clone --depth 1 https://github.com/sirpdboy/luci-app-taskplan taskplan && mv -n taskplan/luci-app-taskplan ./ && rm -rf taskplan
+git clone --depth 1 -b main https://github.com/sirpdboy/luci-app-timecontrol timecontrol && mv -n timecontrol/luci-app-nft-timecontrol ./ && rm -rf timecontrol
 git clone --depth 1 https://github.com/sirpdboy/luci-app-chatgpt-web
 
 # 易有云团队
