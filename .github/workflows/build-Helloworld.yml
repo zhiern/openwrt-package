@@ -32,7 +32,7 @@ jobs:
           sed -i 's/$(BPF_DEPENDS)//g' daed/Makefile
 
       - name: Build Packages
-        uses: sbwml/openwrt-gh-action-sdk@helloworld
+        uses: zhiern/openwrt-gh-action-sdk@helloworld
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.tag }}
           FEEDNAME: packages_ci
